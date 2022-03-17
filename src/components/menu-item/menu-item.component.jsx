@@ -2,12 +2,12 @@ import React from "react";
 import './menu-item.styles.scss'
 import { useNavigate } from "react-router-dom";
 
-const MenuItem=({title,imageUrl,size,linkUrl,match})=>{
+const MenuItem=({title,imageUrl,size,linkUrl})=>{
     const navigate = useNavigate();
 
     const onClick=()=>{
         setTimeout(()=>{
-            navigate(`${match.url}${linkUrl}`);
+            navigate(`/${linkUrl}`);
         })
     }
 
