@@ -1,14 +1,32 @@
 
 import './App.scss';
 import HomePage from './pages/homepage/homepage.component';
-import {Routes,Route} from 'react-router-dom'
+import { Routes,Route,useNavigate} from 'react-router-dom'
 
-const HatsPage =()=>(
-  <div>
-    <h1>hats page</h1>
-  </div>
-);
+
+
+
 function App() {
+  
+  const navigate = useNavigate();
+
+  const newPage=()=>{
+ 
+    setTimeout(()=>{
+        navigate('/');
+    })
+  
+    
+  }
+
+  const HatsPage =(props)=>(
+  
+    console.log(props),
+    <div>
+      <button onClick={newPage} >Hello</button>
+      <h1>hats page:</h1>
+    </div>
+  )
   return (
     <div >
     
@@ -16,6 +34,7 @@ function App() {
       <Route  exact path='/' element={<HomePage/>}></Route>
       <Route path='/hats' element={<HatsPage/>}></Route>
       </Routes>
+      
       
     {/* <HomePage></HomePage> */}
     </div>
